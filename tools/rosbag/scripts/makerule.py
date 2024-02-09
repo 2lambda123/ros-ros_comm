@@ -80,7 +80,7 @@ if __name__ == '__main__':
         print('Could not open message full definition: %s', file=sys.stderr)
         sys.exit()
 
-    type_line = f.readline()
+    type_line = f.readline(5_000_000)
     pat = re.compile(r"\[(.*)]:")
     type_match = pat.match(type_line)
     if type_match is None:
