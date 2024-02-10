@@ -43,6 +43,19 @@ import genpy.message
 import genpy.dynamic
 
 def print_trans(old, new, indent):
+    """Prints the transformation from the old to the new object, including their types and MD5 checksums.
+    Parameters:
+        - old (object): The old object to transform from.
+        - new (object): The new object to transform to, if applicable.
+        - indent (int): The number of indentations to use when printing.
+    Returns:
+        - None: This function does not return any value.
+    Processing Logic:
+        - Format objects with their types and MD5 checksums.
+        - Print transformation from old to new.
+        - Use indentation to format output.
+        - Handle case when new object is None."""
+    
     from_txt = '%s [%s]' % (old._type, old._md5sum)
     if new is not None:
         to_txt= '%s [%s]' % (new._type, new._md5sum)
